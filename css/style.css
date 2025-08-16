@@ -336,6 +336,16 @@ section.active {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 3rem;
+}
+
+.resume-list .resume-item p span a {
+    color:   #555;
+     text-decoration: underline;
+}
+
+.resume-list .resume-item p span a:hover {
+     color: #3b3be1;
 }
 
 .resume-item .year {
