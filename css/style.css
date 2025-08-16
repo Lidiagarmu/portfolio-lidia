@@ -81,6 +81,8 @@ section.active {
     overflow: auto;
 }
 
+/*-------------------------------------------------------------ESTILOS SECCIÓN HOME*/
+
 .home {
     display: flex;
     align-items: center;
@@ -204,7 +206,6 @@ section.active {
     position: absolute;
     width: 50rem;
     height: 50rem;
-   /* background: conic-gradient(transparent, transparent, transparent, var(--main-color));*/
    background: conic-gradient(var(--main-color) 0% 25%, transparent 25% 100%);
     transform: rotate(0deg);
     animation: rotate-border 10s linear infinite;
@@ -219,8 +220,6 @@ section.active {
         transform: rotate(360deg);
     }
 }
-
-
 
 
 .home-img .img-box .img-item {
@@ -245,6 +244,10 @@ section.active {
     mix-blend-mode: lighten;
 }
 
+
+
+/*-------------------------------------------------------------ESTILOS SECCIÓN SOBRE MÍ*/
+
 .resume-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -266,7 +269,10 @@ section.active {
 
 .resume-box .desc {
     margin: 2rem 0 2.5rem;
+}
 
+.resume-box .desc span {
+    color: var(--main-color);
 }
 
 .resume-box .resume-btn {
@@ -357,3 +363,72 @@ section.active {
     margin-left: -2rem ;
 }
 
+
+.resume-detail.skills .resume-list {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    height: auto;
+    overflow: visible;
+}
+
+.resume-detail.skills .resume-item {
+    position: relative;
+    align-items: center;
+    height: auto; 
+}
+
+.resume-detail.skills .resume-item i {
+    font-size: 8.5rem;
+    transition: .5s;
+}
+
+
+.resume-detail.skills .resume-item:hover i {
+    color: var(--main-color)
+}
+
+.resume-detail.skills .resume-item span {
+    position: absolute;
+    top: -20%;
+    background: var(--white-color);
+    color: var(--bg-color);
+    font-size: 1.6rem;
+    padding: .5rem 1rem;
+    border-radius: .6rem;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(.9);
+    transition: .2s;
+}
+
+.resume-detail.skills .resume-item:hover span {
+    top: -25%;
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.resume-detail.about .resume-list {
+    height: auto;
+    grid-template-columns: repeat(auto-fit, minmax(25 rem, 1fr));
+}
+
+.resume-detail.about .resume-item {
+    height: auto;
+    padding: 0 0 .5rem;
+    background: transparent;
+}
+
+.resume-detail.about .resume-item  p {
+    color: var(--main-color);
+}
+
+.resume-detail.about .resume-item p span {
+    color: var(--white-color);
+    margin-left: 1rem;
+    font-size: 1.8 rem;
+}
+
+/*-------------------------------------------------------------ESTILOS SECCIÓN PROJECTOS*/
+
+
+/*-------------------------------------------------------------ESTILOS SECCIÓN CONTACTO*/
