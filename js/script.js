@@ -1,10 +1,64 @@
-/**
- * Inicializa la funcionalidad de pestañas (tabs) para la sección "resume".
- * 
- * - Escucha clics en cada botón `.resume-btn`.
- * - Activa el botón pulsado y desactiva los demás.
- * - Muestra el contenido `.resume-detail` correspondiente y oculta el resto.
- */
+
+const navLinks = document.querySelectorAll('header nav a ');
+const logoLink = document.querySelector('.logo');
+const sections = document.querySelectorAll('section');
+
+
+
+const activePage = () => {
+    const header = document.querySelector('header');
+    const barsBox = document.querySelector('.bars-box');
+
+        header.classList.remove('active');
+    setTimeout(() => {
+        header.classList.add('active');
+    }, 1100);
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    barsBox.classList.remove('active');
+    setTimeout(() => {
+        barsBox.classList.add('active');
+    }, 1100);
+
+        sections.forEach(section => {
+        section.classList.remove('active');
+    });
+}
+
+
+navLinks.forEach((link, idx) => {
+    link.addEventListener('click', () => {
+        if (!link.classList.contains('active')) {
+            activePage();
+
+            link.classList.add('active');
+
+            setTimeout(() => {
+                    sections[idx].classList.add('active');
+            }, 1100);
+        }
+    });
+});
+
+
+logoLink.addEventListener('click', () => {
+    if (!navLinks[0].classList.contains('active')) {
+        activePage();
+
+        navLinks[0].classList.add('active');
+
+         setTimeout(() => {
+                    sections[0].classList.add('active');
+            }, 1100);
+        
+    }
+});
+
+
+
 
 const resumeBtns = document.querySelectorAll('.resume-btn');
 
@@ -30,15 +84,6 @@ const arrowLeft = document.querySelector('.portfolio-box .navigation .arrow-left
 
 let index = 0;
 
-/**
- * Actualiza la vista del carrusel de portfolio.
- *
- * - Mueve el contenedor `.img-slide` horizontalmente según el valor de `index`.
- * - Activa el detalle de proyecto correspondiente y desactiva los demás.
- *
- * @function activePortfolio
- * @returns {void}
- */
 
 const activePortfolio = () => {
     const imgSlide = document.querySelector('.portfolio-carousel .img-slide');
@@ -53,17 +98,7 @@ const activePortfolio = () => {
 }
 
 
-/**
- * Controla el evento de click en la flecha derecha.
- *
- * - Incrementa `index` hasta un máximo de 5.
- * - Habilita la flecha izquierda si no estaba activa.
- * - Deshabilita la flecha derecha si se llega al último slide.
- * - Llama a `activePortfolio()` para actualizar la vista.
- *
- * @callback onArrowRightClick
- * @returns {void}
- */
+
 arrowRight.addEventListener('click', () => {
     if (index < 4) {
         index++;
@@ -77,17 +112,6 @@ arrowRight.addEventListener('click', () => {
 });
 
 
-/**
- * Controla el evento de click en la flecha izquierda.
- *
- * - Decrementa `index` hasta un mínimo de 0.
- * - Habilita la flecha derecha si no estaba activa.
- * - Deshabilita la flecha izquierda si se llega al primer slide.
- * - Llama a `activePortfolio()` para actualizar la vista.
- *
- * @callback onArrowLeftClick
- * @returns {void}
- */
 arrowLeft.addEventListener('click', () => {
     if (index > 1) {
         index--;
