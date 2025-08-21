@@ -50,7 +50,7 @@ navLinks.forEach((link, idx) => {
 
             setTimeout(() => {
                     sections[idx].classList.add('active');
-            }, 1100);
+            }, 0);
         }
     });
 });
@@ -64,7 +64,7 @@ logoLink.addEventListener('click', () => {
 
          setTimeout(() => {
                     sections[0].classList.add('active');
-            }, 1100);
+            }, 0);
         
     }
 });

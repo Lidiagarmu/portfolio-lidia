@@ -79,6 +79,9 @@ nav a.active {
     display: none;
 }
 
+
+/*. BARS INACTIVAS POR EL MOMENTO
+
 .bars-box {
     position: absolute;
     width: 100%;
@@ -117,6 +120,8 @@ nav a.active {
         transform: translateY(0);
     }
 }
+
+*/
 
 section {
     position: absolute;
