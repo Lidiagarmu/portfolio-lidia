@@ -393,8 +393,9 @@ section.active {
     border-radius: .8rem;
     padding: 3rem 2.5rem;
     display: flex;
+   /* height: calc((45rem - 2rem) / 2);*/
     flex-direction: column;
-    justify-content: flex-start; 
+    justify-content: flex-start; /*center*/
     margin-top: 3rem;
 }
 
