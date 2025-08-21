@@ -503,6 +503,8 @@ section.active {
 .portfolio  h2 {
     font-size: 3.5rem;
     text-align: center;
+     margin-top: 2rem;   /* lo separa del contenedor superior */
+    margin-bottom: 2rem; /* lo separa de lo que sigue debajo */
 }
 
 .portfolio-container {
@@ -588,6 +590,13 @@ section.active {
     transform: translateX(-50%) scale(1);
 }
 
+/* Ocultar Live Project en proyectos 2, 4 y 6 por NO estar desplegados en Vercel*/
+.portfolio-detail:nth-child(2) .live-github a:first-child,
+.portfolio-detail:nth-child(4) .live-github a:first-child,
+.portfolio-detail:nth-child(6) .live-github a:first-child {
+    display: none;
+}
+
 .portfolio-box .portfolio-carousel {
     width: 100%;
     height: 45rem;
@@ -602,6 +611,7 @@ section.active {
     gap: 2rem;
     height: inherit;
     transition: .5s;
+    margin-top: 2rem;
 }
 
 .portfolio-carousel .img-item {
