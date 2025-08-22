@@ -921,3 +921,10 @@ section.active {
         font-size: 3.5rem ;
     }
 }
+
+
+/* ==== Scrollbar Firefox ==== */
+.resume-list {
+    scrollbar-width: thin; /* opciones: auto, thin, none */
+    scrollbar-color: var(--main-color) transparent; 
+}
