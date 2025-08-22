@@ -384,13 +384,10 @@ section.active {
     width: .7rem;
 }
 
-.resume-list::-webkit-scrollbar-thumb{
-    background: transparent;
-    border-radius: 1rem;
-}
 
-.resume-list:hover::-webkit-scrollbar-thumb{
+.resume-list::-webkit-scrollbar-thumb{
     background: var(--main-color);
+        border-radius: 1rem;
 }
 
 
