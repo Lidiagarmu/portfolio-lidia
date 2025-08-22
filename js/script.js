@@ -97,6 +97,12 @@ const arrowLeft = document.querySelector('.portfolio-box .navigation .arrow-left
 let index = 0;
 
 
+// NUEVO
+const slides = document.querySelectorAll('.portfolio-carousel .img-item');
+const totalSlides = slides.length;
+
+
+
 const activePortfolio = () => {
     const imgSlide = document.querySelector('.portfolio-carousel .img-slide');
     const portfolioDetails = document.querySelectorAll('.portfolio-detail');
@@ -111,6 +117,8 @@ const activePortfolio = () => {
 
 
 
+/* antigua función hardcodeada a 5 elementos
+
 arrowRight.addEventListener('click', () => {
     if (index < 4) {
         index++;
@@ -123,6 +131,38 @@ arrowRight.addEventListener('click', () => {
     activePortfolio();
 });
 
+*/
+
+
+
+
+arrowRight.addEventListener('click', () => {
+    if (index < totalSlides - 1) {
+        index++;
+        arrowLeft.classList.remove('disabled');
+    }
+    if (index === totalSlides - 1) {
+        arrowRight.classList.add('disabled');
+    }
+    activePortfolio();
+});
+
+
+
+arrowLeft.addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+        arrowRight.classList.remove('disabled');
+    }
+    if (index === 0) {
+        arrowLeft.classList.add('disabled');
+    }
+    activePortfolio();
+}); 
+
+
+
+/* antigua funcion hardcodeada a 5 elementos
 
 arrowLeft.addEventListener('click', () => {
     if (index > 1) {
@@ -135,3 +175,4 @@ arrowLeft.addEventListener('click', () => {
     }
     activePortfolio();
 });
+*/
