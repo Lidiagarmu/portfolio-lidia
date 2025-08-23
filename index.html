@@ -484,8 +484,10 @@
                             <h2 class="heading">¡Ponte en contacto <span>conmigo</span>!</h2>
                             <div class="field-box">
                                 <input type="text" name="user_name" placeholder="Nombre completo" required>
-                                <input type="email" name="user_email" placeholder="Correo electrónico" required>
-                                <input type="text"  name="user_phone" placeholder="Teléfono" required>
+                                <input type="email" name="user_email" placeholder="Correo electrónico"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                title="Introduce un correo válido (ej: usuario@dominio.com)"required>
+                                <input type="text"  name="user_phone" placeholder="Teléfono" required  pattern="^\+?[0-9]{7,15}$" 
+                                title="Introduce un número válido (7 a 15 dígitos, opcional con + al inicio)">
                                 <input type="text" name="subject" placeholder="Asunto" required>
                                 <textarea  name="message" id="" placeholder="Mensaje" required></textarea>
                             </div>
