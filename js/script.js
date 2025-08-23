@@ -116,26 +116,6 @@ const activePortfolio = () => {
 }
 
 
-
-/* antigua función hardcodeada a 5 elementos
-
-arrowRight.addEventListener('click', () => {
-    if (index < 4) {
-        index++;
-        arrowLeft.classList.remove('disabled');
-    }
-    else {
-        index = 5;
-        arrowRight.classList.add('disabled');
-    }
-    activePortfolio();
-});
-
-*/
-
-
-
-
 arrowRight.addEventListener('click', () => {
     if (index < totalSlides - 1) {
         index++;
@@ -162,17 +142,35 @@ arrowLeft.addEventListener('click', () => {
 
 
 
-/* antigua funcion hardcodeada a 5 elementos
 
-arrowLeft.addEventListener('click', () => {
-    if (index > 1) {
-        index--;
-         arrowRight.classList.remove('disabled');
+const form = document.getElementById('contact-form');
+const formMsg = document.getElementById('form-msg');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Evita redirección a página de Getform
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            formMsg.style.display = 'block';
+            formMsg.style.color = 'green';
+            formMsg.textContent = '✅ Gracias, tu mensaje ha sido enviado correctamente.';
+            form.reset(); // limpia el formulario
+        } else {
+            formMsg.style.display = 'block';
+            formMsg.style.color = 'red';
+            formMsg.textContent = '❌ Ocurrió un error, intenta de nuevo.';
+        }
+    } catch (error) {
+        formMsg.style.display = 'block';
+        formMsg.style.color = 'red';
+        formMsg.textContent = '⚠️ Error de conexión. Inténtalo más tarde.';
     }
-    else {
-        index = 0;
-        arrowLeft.classList.add('disabled');
-    }
-    activePortfolio();
 });
-*/

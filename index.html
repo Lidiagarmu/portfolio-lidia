@@ -480,7 +480,7 @@
 
                 <!-- parte derecha fotmulario de contacto-->
                  <div class="contact-box">
-                    <form action="">
+                    <form action="https://getform.io/f/avrmwkpa" method="POST">
                             <h2 class="heading">¡Ponte en contacto <span>conmigo</span>!</h2>
                             <div class="field-box">
                                 <input type="text" name="user_name" placeholder="Nombre completo" required>
@@ -489,13 +489,20 @@
                                 <input type="text" name="subject" placeholder="Asunto" required>
                                 <textarea  name="message" id="" placeholder="Mensaje" required></textarea>
                             </div>
+                             <!-- Honeypot anti-spam (opcional, recomendado) -->
+                             <input type="hidden" name="_gotcha" style="display:none !important">
+    
                             <button type="submit" class="btn">Enviar</button>
+                              <!-- Mensaje de confirmación (oculto al inicio) -->
+                            <p id="form-msg" style="display:none; margin-top:10px;"></p>
                     </form>
                 </div>
 
             </div>
        </section>
 
+
+       
 
     <!-- custom js-->
      <script src="js/script.js"></script>
