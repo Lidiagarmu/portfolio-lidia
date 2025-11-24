@@ -578,6 +578,11 @@ section.active {
 .portfolio-box .live-github a:first-child i {
     transform: rotate(135deg);
 }
+/* Evitar giro en los proyectos 1 y 2 */
+.portfolio-detail:nth-child(1) .live-github a:first-child i,
+.portfolio-detail:nth-child(2) .live-github a:first-child i {
+    transform: none !important;
+}
 
  .portfolio-box .live-github a span {
     position: absolute;
@@ -601,12 +606,6 @@ section.active {
     transform: translateX(-50%) scale(1);
 }
 
-/* Ocultar Live Project en proyectos 2, 4 y 6 por NO estar desplegados en Vercel*/
-.portfolio-detail:nth-child(2) .live-github a:first-child,
-.portfolio-detail:nth-child(4) .live-github a:first-child,
-.portfolio-detail:nth-child(6) .live-github a:first-child {
-    display: none;
-}
 
 .portfolio-box .portfolio-carousel {
     width: 100%;
@@ -891,3 +890,5 @@ section.active {
     scrollbar-width: thin; 
     scrollbar-color: var(--main-color) transparent; 
 }
+
+

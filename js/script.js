@@ -174,3 +174,4 @@ form.addEventListener('submit', async (e) => {
         formMsg.textContent = '⚠️ Error de conexión. Inténtalo más tarde.';
     }
 });
+
