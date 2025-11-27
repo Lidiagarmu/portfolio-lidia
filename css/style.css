@@ -16,6 +16,9 @@
     --main-color: #7cf03d;
     --white-color: #fff;
     --disabled-color: #fff3;
+    --accent-color: #1a73e8;     /* ejemplo: color de hover/acentos */
+    --muted-text: #6b7280;       /* texto secundario (labels) */
+    --icon-size: 2.1rem;
 
 }
 
@@ -237,6 +240,7 @@ section.active {
 
 .home-detail .btn-sci .sci {
     margin-left: 2rem;
+    margin-top: 2rem;
 }
 
 .home-detail .btn-sci .sci a {
@@ -892,6 +896,86 @@ section.active {
 .resume-list {
     scrollbar-width: thin; 
     scrollbar-color: var(--main-color) transparent; 
+}
+
+
+
+
+
+/* contenedor principal */
+.sci{
+  display:flex;
+  gap:1.4rem;
+  align-items:flex-start;
+  justify-content:center; /* o flex-start según diseño */
+  margin:0.5rem 0;
+}
+
+/* cada item (icon + label) */
+.sci-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  font-family:inherit;
+}
+
+/* enlace que contiene el icono */
+.sci-item a{
+  color: inherit; /* usa color actual del contexto */
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform .12s ease, color .12s ease;
+}
+
+/* tamaño del icono (aplica a <i> de Boxicons y a SVGs) */
+.sci-item .icon{
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size: var(--icon-size); /* para icon fonts como Boxicons */
+  line-height:1;
+}
+
+/* si es SVG, que tome el color del enlace */
+.sci-item svg{
+  width:100%;
+  height:100%;
+  fill: currentColor;
+}
+
+/* etiqueta debajo del icono */
+.sci-item figcaption{
+  margin-top:0.35rem;
+  font-size:1.2rem;
+  color: var(--muted-text);
+  user-select:none;
+}
+
+/* hover / foco accesible */
+.sci-item a:hover,
+.sci-item a:focus{
+  color: var(--accent-color); /* color de la página para acento */
+  transform: translateY(-3px);
+  outline: none;
+}
+
+/* foco visible (para teclado) */
+.sci-item a:focus-visible{
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
+  border-radius: 6px;
+}
+
+/* móvil: reduce gap */
+@media (max-width:480px){
+  .sci{
+    gap:1rem;
+  }
+  :root{ --icon-size: 1.8rem; }
 }
 
 
