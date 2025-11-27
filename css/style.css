@@ -380,7 +380,7 @@ section.active {
 
 .resume-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     height: 45rem;
     overflow: scroll;
